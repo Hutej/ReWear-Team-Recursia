@@ -61,31 +61,6 @@ const FloatingClothingCard = ({
 
   return (
     <div className={`relative ${className}`} style={{ width, height }}>
-      {/* Floating particles background */}
-      <div className="absolute inset-0 overflow-hidden rounded-3xl">
-        {particles.map((particle) => (
-          <motion.div
-            key={particle.id}
-            className="absolute bg-white/20 rounded-full"
-            style={{
-              left: `${particle.x}%`,
-              top: `${particle.y}%`,
-              width: particle.size,
-              height: particle.size,
-            }}
-            animate={{
-              y: [0, -20, 0],
-              opacity: [0.3, 0.8, 0.3],
-            }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              delay: particle.delay,
-            }}
-          />
-        ))}
-      </div>
-
       {/* Main card */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
