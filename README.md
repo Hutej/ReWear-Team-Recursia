@@ -10,6 +10,9 @@ discarding them.
 
 # Team
 ayushpathak16022005@gmail.com
+
 hutejmane880@gmail.com
+
 mohitchoudhari162@gmail.com
+
 adi.chavan74@gmail.com
