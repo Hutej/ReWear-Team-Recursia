@@ -1,18 +1,39 @@
-# ReWear-Team-Recursia
+# 👚 ReWear – Community Clothing Exchange
 
-ReWear – Community Clothing Exchange
+ReWear is a sustainable clothing exchange platform where users can donate, swap, or redeem second-hand clothes using a point-based system. Built for community-driven fashion reuse and eco-friendly impact.
 
-# Problem statment :- 
-Develop ReWear, a web-based platform that enables users to exchange unused clothing
-through direct swaps or a point-based redemption system. The goal is to promote sustainable
-fashion and reduce textile waste by encouraging users to reuse wearable garments instead of
-discarding them.
+---
 
-# Team
-ayushpathak16022005@gmail.com
+## 🌟 Features
 
-mohitchoudhari162@gmail.com
+- 👥 User Authentication (Login / Signup)
+- 🛍️ Browse & List Clothing Items
+- 🎯 Filter by Category, Size, Tags
+- 🔁 Request Swaps or Redeem with Points
+- 📸 Upload Images with Listings
+- 🧑‍💼 User Dashboard (Listings, Swaps, Points)
+- 🔐 Admin Panel (Approve/Reject/Block Listings & Users)
+- 📱 Fully Responsive – Mobile & Desktop
+- ☁️ Private 1-to-1 Chat using ZEGOCLOUD (Secure)
+- 🌙 Dark Mode Toggle
+- 🔔 Toast Notifications (Success/Error)
 
-adi.chavan74@gmail.com
+---
 
-hutejmane880@gmail.com
+## 🛠️ Tech Stack
+
+| Frontend        | Backend         | Tools/Libs                 |
+|-----------------|-----------------|----------------------------|
+| React.js        | Node.js (optional) | Tailwind CSS, React Router |
+| Vite            | Express / mock API | Axios, React Context       |
+| React Context API | MongoDB (optional) | React Toastify, Zego ZIM SDK |
+
+---
+
+## 🔧 Installation
+
+### 1️⃣ Clone the repo
+```bash
+git clone https://github.com/Hutej/ReWear-Team-Recursia.git
+cd ReWear-Team-Recursia
+
