@@ -168,7 +168,7 @@ const UserDashboard = () => {
   const renderOverview = () => (
     <div className="space-y-6">
       {/* Welcome Section */}
-      <div className="bg-gradient-to-r from-primary-600 to-primary-700 rounded-xl p-6 text-white">
+      <div className="bg-gradient-to-r from-primary-600 to-primary-700 rounded-xl p-6 text-black">
         <div className="flex items-center justify-between">
           <div>
             <h2 className="text-2xl font-bold mb-2">Welcome back, {user?.name}!</h2>
@@ -214,7 +214,7 @@ const UserDashboard = () => {
       {/* Recent Activity */}
       <div className="grid md:grid-cols-2 gap-6">
         {/* Recent Listings */}
-        <div className="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
+        <div className="bg-gradient-to-br from-[#D1D8BE] to-white rounded-lg p-6 shadow-sm border border-neutral-200">
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-lg font-semibold text-neutral-900">Recent Listings</h3>
             <Link to="#" onClick={() => setActiveTab('listings')} className="text-primary-600 hover:text-primary-700 text-sm">
@@ -242,7 +242,7 @@ const UserDashboard = () => {
         </div>
 
         {/* Recent Swaps */}
-        <div className="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
+        <div className="bg-gradient-to-br from-[#D1D8BE] to-white rounded-lg p-6 shadow-sm border border-neutral-200">
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-lg font-semibold text-neutral-900">Recent Swaps</h3>
             <Link to="#" onClick={() => setActiveTab('swaps')} className="text-primary-600 hover:text-primary-700 text-sm">
@@ -270,7 +270,7 @@ const UserDashboard = () => {
         </div>
       </div>
 
-      {/* Quick Actions */}
+      {/* Quick Actions
       <div className="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
         <h3 className="text-lg font-semibold text-neutral-900 mb-4">Quick Actions</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -292,7 +292,7 @@ const UserDashboard = () => {
             </motion.button>
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 
