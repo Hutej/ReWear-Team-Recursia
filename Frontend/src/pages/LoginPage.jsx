@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { toast } from 'react-toastify';
 import { useAuth } from '../context/AuthContext';
-// import ClothingModel from '../components/3d/ClothingModel';
+import ClothingModel from '../components/3d/ClothingModel';
 import {
   EyeIcon,
   EyeSlashIcon,
@@ -87,17 +87,12 @@ const LoginPage = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-16 bg-gradient-to-br from-primary-50 via-white to-eco-beige">
+    <div className="min-h-screen pt-16">
       <div className="min-h-screen flex">
         {/* Left Side - 3D Models */}
-        <div className="hidden lg:flex lg:w-1/2 items-center justify-center bg-gradient-to-br from-primary-600 to-primary-800 relative overflow-hidden">
-          {/* Background Elements */}
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-white/10 rounded-full mix-blend-multiply filter blur-xl animate-float"></div>
-            <div className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-white/10 rounded-full mix-blend-multiply filter blur-xl animate-float animation-delay-200"></div>
-          </div>
+        <div className="hidden lg:flex lg:w-1/2 items-center justify-center bg-gradient-to-br from-[#A7C1A8] via-white to-[#D1D8BE] relative overflow-hidden">
 
-          <div className="relative z-10 text-center text-white p-8">
+          <div className="relative z-10 text-center text-black p-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -114,20 +109,20 @@ const LoginPage = () => {
 
             {/* 3D Models */}
             <div className="flex justify-center space-x-8">
-              {/* <ClothingModel 
+            <ClothingModel 
                 itemType="tshirt" 
                 color="#ffffff" 
-                width={200} 
-                height={200}
+                width={240} 
+                height={240}
                 className="animate-slide-in-left"
               />
               <ClothingModel 
                 itemType="dress" 
                 color="#f0f9ff" 
-                width={200} 
-                height={200}
+                width={240} 
+                height={240}
                 className="animate-slide-in-right animation-delay-200"
-              /> */}
+              />
             </div>
           </div>
         </div>
@@ -330,20 +325,18 @@ const LoginPage = () => {
               </div>
             </motion.div>
 
-            {/* Demo Account Info */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.4 }}
               className="bg-primary-50 rounded-lg p-4 text-center"
             >
-              <p className="text-sm text-primary-800 font-medium mb-2">Demo Account</p>
-              <p className="text-xs text-primary-600">
-                Email: demo@rewear.com | Password: demo123
-              </p>
-              <p className="text-xs text-primary-600">
-                Admin: admin@rewear.com | Password: admin123
-              </p>
+              <h1 className="text-sm">
+                Don't have an account?{' '}
+                <Link to="/register" className='hover:font-medium'>
+                  Sign up
+                </Link>
+              </h1>
             </motion.div>
           </motion.div>
         </div>

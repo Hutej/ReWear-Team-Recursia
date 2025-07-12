@@ -12,7 +12,7 @@ import {
   ArrowPathIcon
 } from '@heroicons/react/24/outline';
 
-// import ClothingModel from '../components/3d/ClothingModel';
+import { InteractiveHeroDisplay, ClothingShowcase } from '../components/3d/ClothingModel';
 import Carousel from '../components/Carousel';
 import ItemCard from '../components/ItemCard';
 
@@ -142,12 +142,12 @@ const LandingPage = () => {
 
   // Category data
   const categories = [
-    { name: "Dresses", icon: "👗", count: 1250, color: "from-pink-500 to-rose-500" },
-    { name: "Outerwear", icon: "🧥", count: 890, color: "from-blue-500 to-indigo-500" },
-    { name: "Shoes", icon: "👟", count: 1100, color: "from-green-500 to-emerald-500" },
-    { name: "Accessories", icon: "👜", count: 750, color: "from-purple-500 to-violet-500" },
-    { name: "Knitwear", icon: "🧶", count: 620, color: "from-orange-500 to-amber-500" },
-    { name: "Jeans", icon: "👖", count: 980, color: "from-cyan-500 to-teal-500" },
+    { name: "Dresses", icon: "👗", count: 1250},
+    { name: "Outerwear", icon: "🧥", count: 890},
+    { name: "Shoes", icon: "👟", count: 1100},
+    { name: "Accessories", icon: "👜", count: 750},
+    { name: "Knitwear", icon: "🧶", count: 620},
+    { name: "Jeans", icon: "👖", count: 980},
   ];
 
   // Stats data
@@ -163,7 +163,7 @@ const LandingPage = () => {
       {/* Hero Section */}
       <section 
         ref={heroRef}
-        className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary-50 via-white to-eco-beige"
+        className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#EEEFE0] to-white px-2 sm:px-4 lg:px-6"
       >
         {/* Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
@@ -250,47 +250,14 @@ const LandingPage = () => {
             </motion.div>
 
             {/* Right Content - 3D Models */}
-            {/* <motion.div
+            <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={heroInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.4 }}
               className="relative"
             >
-              <div className="grid grid-cols-2 gap-8">
-                <div className="space-y-8">
-                  <ClothingModel 
-                    itemType="tshirt" 
-                    color="#22c55e" 
-                    width={200} 
-                    height={200}
-                    className="animate-slide-in-left"
-                  />
-                  <ClothingModel 
-                    itemType="pants" 
-                    color="#16a34a" 
-                    width={200} 
-                    height={200}
-                    className="animate-slide-in-left animation-delay-200"
-                  />
-                </div>
-                <div className="space-y-8 pt-12">
-                  <ClothingModel 
-                    itemType="dress" 
-                    color="#86efac" 
-                    width={200} 
-                    height={200}
-                    className="animate-slide-in-right animation-delay-400"
-                  />
-                  <ClothingModel 
-                    itemType="tshirt" 
-                    color="#4ade80" 
-                    width={200} 
-                    height={200}
-                    className="animate-slide-in-right animation-delay-600"
-                  />
-                </div>
-              </div>
-            </motion.div> */}
+              <InteractiveHeroDisplay />
+            </motion.div>
           </div>
         </div>
       </section>
@@ -298,7 +265,7 @@ const LandingPage = () => {
       {/* Features Section */}
       <section 
         ref={featuresRef}
-        className="py-20 bg-white"
+        className="py-20 bg-gradient-to-l from-[#EEEFE0] to-white"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -358,7 +325,7 @@ const LandingPage = () => {
       </section>
 
       {/* Categories Section */}
-      <section className="py-20 bg-gradient-to-br from-neutral-50 to-primary-50">
+      <section className="py-20 bg-gradient-to-r from-[#EEEFE0] to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 font-display mb-4">
@@ -380,7 +347,7 @@ const LandingPage = () => {
                 className="group"
               >
                 <Link to="/browse" className="block">
-                  <div className={`relative bg-gradient-to-br ${category.color} rounded-xl p-6 text-white text-center shadow-lg hover:shadow-xl transition-all duration-300`}>
+                  <div className={`relative bg-gradient-to-br from-[#A7C1A8] to-white rounded-xl p-6 text-black text-center shadow-lg hover:shadow-xl transition-all duration-300`}>
                     <div className="text-4xl mb-3">{category.icon}</div>
                     <h3 className="font-semibold text-lg mb-1">{category.name}</h3>
                     <p className="text-sm opacity-90">{category.count} items</p>
@@ -432,9 +399,8 @@ const LandingPage = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-center"
           >
-            <Link to="/browse" className="btn-primary">
+            <Link to="/browse" className="btn-primary text-center">
               View All Items
-              <ArrowRightIcon className="w-5 h-5 ml-2" />
             </Link>
           </motion.div>
         </div>
@@ -443,7 +409,7 @@ const LandingPage = () => {
       {/* CTA Section */}
       <section 
         ref={ctaRef}
-        className="py-20 bg-gradient-to-br from-primary-600 to-primary-800 text-white relative overflow-hidden"
+        className="py-20 bg-gradient-to-t from-[#EEEFE0] to-white text-black relative overflow-hidden"
       >
         {/* Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
@@ -469,7 +435,7 @@ const LandingPage = () => {
               <Link to="/register" className="btn-secondary bg-white text-primary-600 hover:bg-primary-50">
                 Get Started Free
               </Link>
-              <Link to="/browse" className="btn-ghost border-white text-white hover:bg-white/10">
+              <Link to="/browse" className="btn-primary border-white text-white hover:bg-white/10">
                 Explore Items
               </Link>
             </div>

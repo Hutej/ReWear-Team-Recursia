@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { toast } from 'react-toastify';
 import { useAuth } from '../context/AuthContext';
-// import ClothingModel from '../components/3d/ClothingModel';
+import ClothingModel from '../components/3d/ClothingModel';
 import {
   EyeIcon,
   EyeSlashIcon,
@@ -139,17 +139,12 @@ const RegisterPage = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-16 bg-gradient-to-br from-primary-50 via-white to-eco-beige">
+    <div className="min-h-screen pt-16">
       <div className="min-h-screen flex">
         {/* Left Side - 3D Models */}
-        <div className="hidden lg:flex lg:w-1/2 items-center justify-center bg-gradient-to-br from-eco-sage to-primary-700 relative overflow-hidden">
-          {/* Background Elements */}
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-white/10 rounded-full mix-blend-multiply filter blur-xl animate-float"></div>
-            <div className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-white/10 rounded-full mix-blend-multiply filter blur-xl animate-float animation-delay-200"></div>
-          </div>
+        <div className="hidden lg:flex lg:w-1/2 items-center justify-center bg-gradient-to-br from-[#A7C1A8] via-white to-[#D1D8BE] relative overflow-hidden">
 
-          <div className="relative z-10 text-center text-white p-8">
+          <div className="relative z-10 text-center text-black p-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -178,36 +173,22 @@ const RegisterPage = () => {
             {/* 3D Models */}
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
-                {/* <ClothingModel 
+                <ClothingModel 
                   itemType="tshirt" 
                   color="#ffffff" 
-                  width={150} 
-                  height={150}
+                  width={240} 
+                  height={240}
                   className="animate-slide-in-left"
                 />
-                <ClothingModel 
-                  itemType="pants" 
-                  color="#f0f9ff" 
-                  width={150} 
-                  height={150}
-                  className="animate-slide-in-left animation-delay-200"
-                /> */}
               </div>
               <div className="space-y-4 pt-8">
-                {/* <ClothingModel 
+                <ClothingModel 
                   itemType="dress" 
                   color="#dcfce7" 
-                  width={150} 
-                  height={150}
+                  width={240} 
+                  height={240}
                   className="animate-slide-in-right animation-delay-400"
                 />
-                <ClothingModel 
-                  itemType="tshirt" 
-                  color="#bbf7d0" 
-                  width={150} 
-                  height={150}
-                  className="animate-slide-in-right animation-delay-600"
-                /> */}
               </div>
             </div>
           </div>

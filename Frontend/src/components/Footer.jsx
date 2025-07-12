@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { 
-  EnvelopeIcon, 
-  PhoneIcon, 
+import {
+  EnvelopeIcon,
+  PhoneIcon,
   MapPinIcon,
   HeartIcon
 } from '@heroicons/react/24/outline';
@@ -71,21 +71,21 @@ const Footer = () => {
               className="space-y-4"
             >
               <Link to="/" className="flex items-center space-x-2">
-                <div className="w-10 h-10 bg-gradient-to-br from-primary-600 to-primary-700 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">R</span>
+                <div className="w-8 h-8 bg-gradient-to-br from-[#819A91] to-blue-600 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">R</span>
                 </div>
                 <span className="text-2xl font-bold font-display">ReWear</span>
               </Link>
-              
+
               <p className="text-neutral-300 text-sm leading-relaxed">
-                Building a sustainable future through community-driven clothing exchange. 
+                Building a sustainable future through community-driven clothing exchange.
                 Give your clothes a second life while discovering unique finds from others.
               </p>
-              
+
               <div className="space-y-2">
                 <div className="flex items-center space-x-2 text-neutral-300 text-sm">
                   <MapPinIcon className="w-4 h-4" />
-                  <span>San Francisco, CA</span>
+                  <span>Pune, Maharashtra</span>
                 </div>
                 <div className="flex items-center space-x-2 text-neutral-300 text-sm">
                   <EnvelopeIcon className="w-4 h-4" />
@@ -93,7 +93,7 @@ const Footer = () => {
                 </div>
                 <div className="flex items-center space-x-2 text-neutral-300 text-sm">
                   <PhoneIcon className="w-4 h-4" />
-                  <span>+1 (555) 123-4567</span>
+                  <span>+19 xxxxxxxxxx</span>
                 </div>
               </div>
             </motion.div>
@@ -169,7 +169,7 @@ const Footer = () => {
                 <span>for the planet</span>
               </div>
             </div>
-            
+
             <div className="flex items-center space-x-4">
               {socialLinks.map((social) => (
                 <motion.a

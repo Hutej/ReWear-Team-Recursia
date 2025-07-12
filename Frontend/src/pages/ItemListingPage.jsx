@@ -21,7 +21,7 @@ import {
   ExclamationTriangleIcon
 } from '@heroicons/react/24/outline';
 import { HeartIcon as HeartIconSolid } from '@heroicons/react/24/solid';
-// import ClothingModel from '../components/3d/ClothingModel';
+import ClothingModel from '../components/3d/ClothingModel';
 import ItemCard from '../components/ItemCard';
 
 const ItemListingPage = () => {
@@ -138,13 +138,13 @@ const ItemListingPage = () => {
   }, [id]);
 
   const nextImage = () => {
-    setCurrentImageIndex((prev) => 
+    setCurrentImageIndex((prev) =>
       prev === item.images.length - 1 ? 0 : prev + 1
     );
   };
 
   const prevImage = () => {
-    setCurrentImageIndex((prev) => 
+    setCurrentImageIndex((prev) =>
       prev === 0 ? item.images.length - 1 : prev - 1
     );
   };
@@ -201,7 +201,7 @@ const ItemListingPage = () => {
     const now = new Date();
     const itemDate = new Date(date);
     const diffInDays = Math.floor((now - itemDate) / (1000 * 60 * 60 * 24));
-    
+
     if (diffInDays === 0) return 'Today';
     if (diffInDays === 1) return 'Yesterday';
     if (diffInDays < 7) return `${diffInDays} days ago`;
@@ -243,7 +243,7 @@ const ItemListingPage = () => {
   }
 
   return (
-    <div className="min-h-screen pt-16 bg-gradient-to-br from-neutral-50 via-white to-eco-beige">
+    <div className="min-h-screen pt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Breadcrumb */}
         <motion.div
@@ -279,7 +279,7 @@ const ItemListingPage = () => {
                 alt={item.title}
                 className="w-full h-full object-cover"
               />
-              
+
               {/* Image Navigation */}
               {item.images.length > 1 && (
                 <>
@@ -305,9 +305,8 @@ const ItemListingPage = () => {
                     <button
                       key={index}
                       onClick={() => setCurrentImageIndex(index)}
-                      className={`w-2 h-2 rounded-full transition-colors ${
-                        index === currentImageIndex ? 'bg-white' : 'bg-white/50'
-                      }`}
+                      className={`w-2 h-2 rounded-full transition-colors ${index === currentImageIndex ? 'bg-white' : 'bg-white/50'
+                        }`}
                     />
                   ))}
                 </div>
@@ -321,11 +320,10 @@ const ItemListingPage = () => {
                   <button
                     key={index}
                     onClick={() => setCurrentImageIndex(index)}
-                    className={`aspect-square rounded-lg overflow-hidden border-2 transition-colors ${
-                      index === currentImageIndex 
-                        ? 'border-primary-600' 
+                    className={`aspect-square rounded-lg overflow-hidden border-2 transition-colors ${index === currentImageIndex
+                        ? 'border-primary-600'
                         : 'border-neutral-200 hover:border-neutral-300'
-                    }`}
+                      }`}
                   >
                     <img
                       src={image}
@@ -341,12 +339,12 @@ const ItemListingPage = () => {
             <div className="bg-white rounded-xl shadow-lg p-6">
               <h3 className="text-lg font-semibold text-neutral-900 mb-4">3D Preview</h3>
               <div className="flex justify-center">
-                {/* <ClothingModel 
-                  itemType="tshirt" 
-                  color="#4ade80" 
-                  width={300} 
+                <ClothingModel
+                  itemType="tshirt"
+                  color="#4ade80"
+                  width={300}
                   height={300}
-                /> */}
+                />
               </div>
             </div>
           </motion.div>
@@ -361,7 +359,7 @@ const ItemListingPage = () => {
             {/* Header */}
             <div className="flex items-start justify-between">
               <div className="flex-1">
-                <h1 className="text-3xl font-bold text-neutral-900 font-display mb-2">
+                <h1 className="text-2xl font-bold text-neutral-900 font-display mb-2">
                   {item.title}
                 </h1>
                 <div className="flex items-center space-x-4 text-sm text-neutral-600">
@@ -403,10 +401,10 @@ const ItemListingPage = () => {
             </div>
 
             {/* Price and Points */}
-            <div className="bg-primary-50 rounded-xl p-6">
-              <div className="flex items-center justify-between mb-4">
+            <div className="bg-[#EEEFE0] rounded-xl p-6">
+              <div className="flex items-center justify-between mb-2">
                 <div className="flex items-center space-x-2">
-                  <TagIcon className="w-8 h-8 text-primary-600" />
+                  <TagIcon className="w-8 h-8" />
                   <span className="text-3xl font-bold text-primary-600">
                     {item.points} pts
                   </span>
@@ -418,35 +416,57 @@ const ItemListingPage = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex items-center space-x-2 text-sm text-primary-700">
+              <div className="flex items-center space-x-2 text-sm">
                 <ShieldCheckIcon className="w-4 h-4" />
                 <span>Price includes ReWear protection</span>
               </div>
             </div>
 
             {/* Item Info */}
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-white rounded-lg p-4 shadow-sm">
+            <div className="grid grid-cols-2 gap-2">
+              <div className="bg-white rounded-lg p-2 shadow-sm">
                 <div className="text-sm text-neutral-600">Condition</div>
-                <div className={`text-lg font-semibold ${
-                  item.condition === 'Excellent' ? 'text-green-600' :
-                  item.condition === 'Good' ? 'text-yellow-600' : 'text-orange-600'
-                }`}>
+                <div className={`text-lg font-semibold ${item.condition === 'Excellent' ? 'text-green-600' :
+                    item.condition === 'Good' ? 'text-yellow-600' : 'text-orange-600'
+                  }`}>
                   {item.condition}
                 </div>
               </div>
-              <div className="bg-white rounded-lg p-4 shadow-sm">
+              <div className="bg-white rounded-lg p-2 shadow-sm">
                 <div className="text-sm text-neutral-600">Size</div>
                 <div className="text-lg font-semibold text-neutral-900">{item.size}</div>
               </div>
-              <div className="bg-white rounded-lg p-4 shadow-sm">
+              <div className="bg-white rounded-lg p-2 shadow-sm">
                 <div className="text-sm text-neutral-600">Brand</div>
                 <div className="text-lg font-semibold text-neutral-900">{item.brand}</div>
               </div>
-              <div className="bg-white rounded-lg p-4 shadow-sm">
+              <div className="bg-white rounded-lg p-2 shadow-sm">
                 <div className="text-sm text-neutral-600">Material</div>
                 <div className="text-lg font-semibold text-neutral-900">{item.material}</div>
               </div>
+            </div>
+
+            {/* Action Buttons */}
+            <div className="space-y-3">
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={handleRequestSwap}
+                className="w-full btn-primary flex items-center justify-center space-x-2"
+              >
+                <ArrowsRightLeftIcon className="w-5 h-5" />
+                <span>Request Swap</span>
+              </motion.button>
+
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={handleRedeemWithPoints}
+                className="w-full btn-secondary flex items-center justify-center space-x-2"
+              >
+                <CreditCardIcon className="w-5 h-5" />
+                <span>Redeem with Points</span>
+              </motion.button>
             </div>
 
             {/* Description */}
@@ -465,40 +485,7 @@ const ItemListingPage = () => {
               )}
             </div>
 
-            {/* Tags */}
-            <div className="flex flex-wrap gap-2">
-              {item.tags.map((tag, index) => (
-                <span
-                  key={index}
-                  className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-eco-beige text-eco-forest"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
 
-            {/* Action Buttons */}
-            <div className="space-y-3">
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                onClick={handleRequestSwap}
-                className="w-full btn-primary flex items-center justify-center space-x-2"
-              >
-                <ArrowsRightLeftIcon className="w-5 h-5" />
-                <span>Request Swap</span>
-              </motion.button>
-              
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                onClick={handleRedeemWithPoints}
-                className="w-full btn-secondary flex items-center justify-center space-x-2"
-              >
-                <CreditCardIcon className="w-5 h-5" />
-                <span>Redeem with Points</span>
-              </motion.button>
-            </div>
 
             {/* Seller Information */}
             <div className="bg-white rounded-lg p-6 shadow-sm">
@@ -523,7 +510,7 @@ const ItemListingPage = () => {
                   </div>
                 </div>
               </div>
-              
+
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <div className="text-center">
                   <div className="text-lg font-semibold text-neutral-900">{item.user.totalListings}</div>

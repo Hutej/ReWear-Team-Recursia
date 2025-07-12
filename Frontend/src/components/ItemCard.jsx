@@ -72,13 +72,6 @@ const ItemCard = ({
             )}
           </motion.button>
           
-          {/* Category Badge */}
-          <div className="absolute top-3 left-3">
-            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800">
-              {item.category}
-            </span>
-          </div>
-          
           {/* Condition Badge */}
           <div className="absolute bottom-3 left-3">
             <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${

@@ -53,10 +53,10 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: 'spring', stiffness: 100, damping: 20 }}
-      className={`fixed w-full top-0 z-50 transition-all duration-300 ${
+      className={`fixed w-full top-0 z-50 transition-all duration-300 px-4 ${
         isScrolled 
           ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-neutral-200' 
-          : 'bg-transparent'
+          : 'bg-gradient-to-r from-[#D1D8BE] to-white'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -68,7 +68,7 @@ const Navbar = () => {
             className="flex-shrink-0"
           >
             <Link to="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-gradient-to-br from-[#819A91] to-blue-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">R</span>
               </div>
               <span className="text-xl font-bold text-neutral-900 font-display">
